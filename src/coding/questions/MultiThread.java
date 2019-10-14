@@ -5,12 +5,16 @@ import java.util.Stack;
 public class MultiThread {
 
 	public static void main(String[] args) throws InterruptedException {
-		for(int i=1;i<11;i++) {
+		for(int i=1;i<4;i++) {
 			ThreadRunnable tr=new ThreadRunnable();
+			MyThread mt=new MyThread();
 			Thread t1=new Thread(tr);
 //			t1.setPriority(i);
 			t1.start();
 			t1.join();
+			Thread t2=new Thread(mt);
+			t2.start();
+			t2.join();
 
 		}
 		
@@ -25,7 +29,6 @@ public class MultiThread {
 }
 
 class ThreadRunnable implements Runnable{
-
 	@Override
 	public void run() {
 		System.out.println("ThreadRunnable called:"+Thread.currentThread().getName());

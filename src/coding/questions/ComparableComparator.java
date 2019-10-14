@@ -3,6 +3,7 @@ package coding.questions;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.TreeSet;
 
 public class ComparableComparator implements Serializable{
 
@@ -12,6 +13,8 @@ public class ComparableComparator implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	public static void main(String[] args) {
+		TreeSet<String> t=new TreeSet<>();
+		
 		
 		Employee[] empArr = new Employee[4];
 		empArr[0] = new Employee(10, "Mikey", 25, 10000);
@@ -105,6 +108,9 @@ class Employee implements Comparable<Employee>{
 		public int compare(Employee o1, Employee o2) {
 			return o1.name.compareTo(o2.name);
 		}
+		
+		
+		
 		
 	};
 
